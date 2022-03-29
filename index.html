@@ -1,0 +1,1168 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>NZSEIS</title>
+    <link rel="icon" href="https://nzseis-stations.auckland.ac.nz/_img/icon.png">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no,width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="apple-touch-fullscreen" content="YES">
+    <meta name="inmobi-site-verification" content="">
+    <meta name="google-site-verification" content="">
+    <meta http-equiv="content-language" content="en" />
+    <meta name="google" content="notranslate" />
+    <style type="text/css">
+        body {
+            background-color: #eeeeee;
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        a:active {
+            text-decoration: none;
+        }
+
+        .white_x-small {
+            font-size: x-small;
+            color: #ffffff;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .white_small {
+            font-size: small;
+            color: #ffffff;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .white_medium {
+            font-size: medium;
+            color: #ffffff;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .white_large {
+            font-size: large;
+            color: #ffffff;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .white_x-large {
+            font-size: x-large;
+            color: #ffffff;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+
+        .l_grey_x-small {
+            font-size: x-small;
+            color: #bbbbbb;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .l_grey_small {
+            font-size: small;
+            color: #bbbbbb;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .l_grey_medium {
+            font-size: medium;
+            color: #bbbbbb;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .l_grey_large {
+            font-size: large;
+            color: #bbbbbb;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .l_grey_x-large {
+            font-size: x-large;
+            color: #bbbbbb;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+
+        .d_grey_x-small {
+            font-size: x-small;
+            color: #888888;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .d_grey_small {
+            font-size: small;
+            color: #888888;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .d_grey_medium {
+            font-size: medium;
+            color: #888888;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .d_grey_large {
+            font-size: large;
+            color: #888888;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .d_grey_x-large {
+            font-size: x-large;
+            color: #888888;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+
+        .red_x-small {
+            font-size: x-small;
+            color: #ff0000;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .red_small {
+            font-size: small;
+            color: #ff0000;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .red_medium {
+            font-size: medium;
+            color: #ff0000;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .red_large {
+            font-size: large;
+            color: #ff0000;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .red_x-large {
+            font-size: x-large;
+            color: #ff0000;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+
+        .green_x-small {
+            font-size: x-small;
+            color: #00aa00;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .green_small {
+            font-size: small;
+            color: #00aa00;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .green_medium {
+            font-size: medium;
+            color: #00aa00;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .green_large {
+            font-size: large;
+            color: #00aa00;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .green_x-large {
+            font-size: x-large;
+            color: #00aa00;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+
+        .blue_x-small {
+            font-size: x-small;
+            color: #1a557b;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .blue_small {
+            font-size: small;
+            color: #1a557b;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .blue_medium {
+            font-size: medium;
+            color: #1a557b;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .blue_large {
+            font-size: large;
+            color: #1a557b;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .blue_x-large {
+            font-size: x-large;
+            color: #1a557b;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+
+        .orange_x-small {
+            font-size: x-small;
+            color: #e48527;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .orange_small {
+            font-size: small;
+            color: #e48527;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .orange_medium {
+            font-size: medium;
+            color: #e48527;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .orange_large {
+            font-size: large;
+            color: #e48527;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .orange_x-large {
+            font-size: x-large;
+            color: #e48527;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+
+        .yellow_x-small {
+            font-size: x-small;
+            color: #f1c501;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .yellow_small {
+            font-size: small;
+            color: #f1c501;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .yellow_medium {
+            font-size: medium;
+            color: #f1c501;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .yellow_large {
+            font-size: large;
+            color: #f1c501;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .yellow_x-large {
+            font-size: x-large;
+            color: #f1c501;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .xxx {
+            font-size: 1px;
+            color: #FFFFFF;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .inp_1 {
+            background-color: #eeeeee;
+            color: #1a557b;
+            padding: 5px;
+            border: 1px solid #1a557b;
+            border-radius: 3px;
+            font-size: large;
+            width: 90%;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .sel_1 {
+            background-color: #eeeeee;
+            color: #1a557b;
+            padding: 5px;
+            border: 1px solid #1a557b;
+            border-radius: 3px;
+            font-size: large;
+            width: 105%;
+            text-align-last: center;
+            font-weight: bold;
+        }
+
+        .sel_2 {
+            background-color: #eeeeee;
+            color: #1a557b;
+            padding: 5px;
+            border: 1px solid #1a557b;
+            border-radius: 3px;
+            font-size: medium;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .txt_1 {
+            background-color: #eeeeee;
+            color: #1a557b;
+            padding: 5px;
+            border: 1px solid #1a557b;
+            border-radius: 3px;
+            resize: none;
+            font-size: medium;
+            width: 98%;
+            text-align: left;
+            height: 99px;
+            font-weight: bold;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .txt_2 {
+            background-color: #eeeeee;
+            color: #1a557b;
+            padding: 5px;
+            border: 1px solid #1a557b;
+            border-radius: 3px;
+            resize: none;
+            font-size: medium;
+            width: 98%;
+            text-align: left;
+            height: 99px;
+            font-style: italic;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        .txt_3 {
+            background-color: #eeeeee;
+            color: #1a557b;
+            padding: 5px;
+            border: 1px solid #1a557b;
+            border-radius: 3px;
+            resize: none;
+            font-size: small;
+            width: 93%;
+            text-align: left;
+            height: 99px;
+            font-style: italic;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+
+        .browse {
+            width: 50px;
+            background: url("https://nzseis-stations.auckland.ac.nz/_img/upld.png?x=");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+
+            padding: 11px;
+            cursor: pointer;
+            vertical-align: center;
+            line-height: normal;
+            background-color: #2b58ca;
+            border-radius: 7px;
+
+            overflow: hidden;
+        }
+
+        .browse:hover {
+            background-color: #5079e1;
+        }
+
+        .browse input {
+            display: block;
+            width: 30px;
+            height: 30px;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+
+        .topcontainer {
+            width: 100%;
+            padding: 0px;
+            border-radius: 0px;
+            background-color: #2b58ca;
+        }
+
+        .container {
+            width: 100%;
+            padding: 0px;
+            border-radius: 0px;
+            background-color: #ffffff;
+        }
+
+        .top {
+            width: 100%;
+            background-color: #ffffff;
+        }
+
+        .top_inside_M {
+            width: 90%;
+            padding: 7px;
+        }
+
+        .top_inside {
+            width: 25%;
+            padding: 7px;
+            display: inline-block;
+        }
+
+        .inside_M {
+            width: 90%;
+            padding: 7px;
+        }
+
+        .smallcar {
+            width: 55px;
+            padding: 3px;
+            display: inline-block;
+        }
+
+        .inside_BOmenu {
+            width: 237px;
+            padding: 7px;
+            display: inline-block;
+        }
+
+        .inside {
+            width: 326px;
+            padding: 7px;
+            display: inline-block;
+        }
+
+        .inside_long {
+            width: 666px;
+            padding: 7px;
+            display: inline-block;
+        }
+
+        .inside_short {
+            width: 217px;
+            padding: 7px;
+            display: inline-block;
+        }
+
+        .roundbox_eeeeee {
+            padding: 7px;
+            background-color: #eeeeee;
+            border-radius: 9px;
+        }
+
+        .button_delete {
+            width: 50px;
+            padding: 11px;
+            cursor: pointer;
+            vertical-align: center;
+            line-height: normal;
+            background-color: #2b58ca;
+            color: #eeeeee;
+            border-radius: 7px;
+        }
+
+        .button_delete:hover {
+            background-color: #aa0000;
+        }
+
+        .button_light {
+            width: 217px;
+            padding: 11px;
+            cursor: pointer;
+            vertical-align: center;
+            line-height: normal;
+            background-color: #eeeeee;
+            border-radius: 7px;
+            color: #2b58ca;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        .button_light:hover {
+            background-color: #ffffff;
+        }
+
+        .button_light_small {
+            width: 97px;
+            padding: 5px;
+            cursor: pointer;
+            vertical-align: center;
+            line-height: normal;
+            background-color: #eeeeee;
+            border-radius: 7px;
+            color: #2b58ca;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        .button_light_small:hover {
+            background-color: #ffffff;
+        }
+
+        .button_dark {
+            padding: 5px;
+            cursor: pointer;
+            vertical-align: center;
+            line-height: normal;
+            background-color: #2b58ca;
+            border-radius: 7px;
+            color: #eeeeee;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        .button_dark:hover {
+            background-color: #5079e1;
+        }
+
+        .button_BO {
+            width: 98%;
+            padding: 5px;
+            cursor: pointer;
+            background-color: #2b58ca;
+            border-radius: 7px;
+            color: #eeeeee;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .button_BO:hover {
+            background-color: #5079e1;
+        }
+
+        .button_BO_OK {
+            width: 98%;
+            padding: 5px;
+            cursor: pointer;
+            background-color: #00aa00;
+            border-radius: 7px;
+            color: #ffffff;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .button_dark_small {
+            width: 97px;
+            padding: 5px;
+            cursor: pointer;
+            vertical-align: center;
+            line-height: normal;
+            background-color: #2b58ca;
+            border-radius: 7px;
+            color: #eeeeee;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        .button_dark_small:hover {
+            background-color: #5079e1;
+        }
+
+        .button_dark_xsmall {
+            width: 50px;
+            padding: 11px;
+            cursor: pointer;
+            vertical-align: center;
+            line-height: normal;
+            background-color: #2b58ca;
+            color: #eeeeee;
+            border-radius: 7px;
+        }
+
+        .button_dark_xsmall:hover {
+            background-color: #5079e1;
+        }
+
+
+        .button_green {
+            width: 217px;
+            padding: 11px;
+            cursor: pointer;
+            vertical-align: center;
+            line-height: normal;
+            background-color: #00aa00;
+            border-radius: 7px;
+            color: #ffffff;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        .button_green_small {
+            padding: 5px;
+            cursor: pointer;
+            vertical-align: center;
+            line-height: normal;
+            background-color: #00aa00;
+            border-radius: 7px;
+            color: #ffffff;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        .button_yellow_small {
+            padding: 5px;
+            cursor: pointer;
+            vertical-align: center;
+            line-height: normal;
+            background-color: #ffaa00;
+            border-radius: 7px;
+            color: #ffffff;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        .button_red {
+            width: 217px;
+            padding: 11px;
+            cursor: pointer;
+            vertical-align: center;
+            line-height: normal;
+            background-color: #ee0000;
+            border-radius: 7px;
+            color: #ffffff;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        .button_red_small {
+            padding: 5px;
+            cursor: pointer;
+            vertical-align: center;
+            line-height: normal;
+            background-color: #ee0000;
+            border-radius: 7px;
+            color: #ffffff;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        .padding {
+            padding: 11px;
+        }
+
+        .padding_BOmenu {
+            padding: 7px;
+        }
+
+        .KO_mess {
+            width: 67%;
+            padding: 7px;
+            vertical-align: center;
+            line-height: normal;
+            background-color: #aa0000;
+            border-radius: 7px;
+            color: #ffffff;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        .OK_mess {
+            width: 67%;
+            padding: 7px;
+            vertical-align: center;
+            line-height: normal;
+            background-color: #00aa00;
+            border-radius: 7px;
+            color: #ffffff;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        .Tip {
+            padding: 7px;
+            vertical-align: center;
+            line-height: normal;
+            background-color: #ffffff;
+            border-radius: 7px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: #2b58ca color: #ffffff;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+
+        .rTable {
+            display: table;
+            width: 100%;
+        }
+
+        .rTableRow {
+            display: table-row;
+        }
+
+        .rTableHeading {
+            display: table-header-group;
+            background-color: #5079e1;
+        }
+
+        .rTableCell,
+        .rTableHead {
+            display: table-cell;
+            padding: 1px 1px;
+            border: 0px solid #eeeeee;
+            text-align: center;
+        }
+
+        .rTableHeading {
+            display: table-header-group;
+            background-color: #eeeeee;
+        }
+
+        .rTableFoot {
+            display: table-footer-group;
+            background-color: #eeeeee;
+        }
+
+        .rTableBody {
+            display: table-row-group;
+        }
+
+        .roundbox_F6E1EC {
+            padding: 7px;
+            background-color: #F6E1EC;
+            border-radius: 9px;
+        }
+
+        .roundbox_FAEFD9 {
+            padding: 7px;
+            background-color: #FAEFD9;
+            border-radius: 9px;
+        }
+    </style>
+</head>
+
+<body>
+    <div align="center">
+        <script type='text/javascript' src='https://nzseis-stations.auckland.ac.nz/_a-tip.js'></script>
+        <div class='topcontainer'>
+            <div style='width:10%; display:inline-block;'>
+                <div style='display: inline-block; width:14.285714285714%;'><a href=""><img
+                            src="https://nzseis-stations.auckland.ac.nz/_img/logo.png" width="99%" border="0"><br><span
+                            class="white_medium">R&umacr;</span></a></div>
+            </div>
+            <div style='display: inline-block; width:14.285714285714%;'>
+                <div class='button_dark' onClick='home.submit()'><b>Network Map</b></div>
+            </div>
+            <div style='display: inline-block; width:14.285714285714%;'>
+                <div class='button_dark' onClick='snapshots.submit()'><b>Latest Snapshots</b></div>
+            </div>
+            <div style='display: inline-block; width:14.285714285714%;'>
+                <div class='button_dark' onClick='tc1.submit()'><b>About TC-1</b></div>
+            </div>
+            <div style='display: inline-block; width:14.285714285714%;'>
+                <div class='button_dark' onClick='acknowledgements.submit()'><b>Acknowledgements</b></div>
+            </div>
+            <div style='display: inline-block; width:14.285714285714%;'>
+                <div class='button_dark' onClick='rublog.submit()'><b>R&umacr; blog</b></div>
+            </div>
+            <div style='display: inline-block; width:14.285714285714%;'>
+                <div class='button_dark' onClick='admin.submit()'><b>Admin</b></div>
+            </div>
+            <form name='home' method='get' action='' target='_self' accept-charset='ISO-8859-1'><input name='back'
+                    value='write' type='hidden'><input name='whre' value='' type='hidden'></form>
+            <form name='snapshots' method='post' action='snapshots.php' target='_self' accept-charset='ISO-8859-1'>
+                <input name='back' value='write' type='hidden'><input name='whre' value='' type='hidden'>
+            </form>
+            <form name='tc1' method='post' action='tc1.php' target='_self' accept-charset='ISO-8859-1'><input
+                    name='back' value='write' type='hidden'><input name='whre' value='' type='hidden'></form>
+            <form name='acknowledgements' method='post' action='acknowledgements.php' target='_self'
+                accept-charset='ISO-8859-1'><input name='back' value='write' type='hidden'><input name='whre' value=''
+                    type='hidden'></form>
+            <form name='rublog' method='post' action='https://ru.auckland.ac.nz/' target='_blank'
+                accept-charset='ISO-8859-1'><input name='back' value='write' type='hidden'><input name='whre' value=''
+                    type='hidden'></form>
+            <form name='admin' method='post' action='station/index.php' target='_self' accept-charset='ISO-8859-1'>
+                <input name='back' value='write' type='hidden'><input name='whre' value='' type='hidden'>
+            </form><br>
+        </div>
+        <style type="text/css">
+            #station-data {
+                margin-top: 15px;
+            }
+
+            #station-data>p>img {
+                max-width: 90%;
+                height: auto;
+                width: auto\9;
+                /* ie8 */
+            }
+
+
+            .eqDistGradient {
+                background: linear-gradient(to right, rgba(255, 0, 0, 1.0), rgba(255, 255, 0, 1.0), rgba(0, 255, 0, 1.0));
+                width: 96%;
+                padding: 0px;
+                margin: 0px;
+                border: none;
+                text-align: center;
+            }
+        </style>
+
+        <div style='background-color:#ffffff;'>
+
+            <form name='parf' method='#' action='' accept-charset='ISO-8859-1'>
+                <span class='blue_large'><br><b>The network of Seismometers in NZ Schools</b><br></span>
+
+                <br>
+
+                <div style='display:inline-block;'><span class='blue_medium'><b id="n_eq">466</b> earthquakes with</div>
+
+                <div style='display:inline-block;'>
+                    <select id="magnitude" class="sel_1" name="mmaagg">
+                        <option value="1.0">magnitude > 1</option>
+                        <option value="2.5" selected>magnitude > 2.5</option>
+                        <option value="4.5">magnitude > 4.5</option>
+                    </select>
+                </div>
+
+
+                <div style='display:inline-block;'><span class='blue_medium'>&nbsp;&nbsp;occurred during last</div>
+
+                <div style='display:inline-block;'>
+                    <select id="age" class="sel_1" name="llsstt">
+                        <option value="1">day</option>
+                        <option value="7" selected>week</option>
+                        <option value="30">month</option>
+                    </select>
+
+                </div>
+
+                <div style='display:inline-block;'><span class='blue_medium'>&nbsp;&nbsp;all over the world
+                        (<b id="pct_nz">25.8%</b> in New Zealand).<br></span>
+                </div>
+                <br><br>
+                </span>
+            </form>
+            <span class='d_grey_small'>Data sources: <b><a href=http://geonet.org.nz/ target=_blank><span
+                            class='d_grey_small'>GeoNet</span></a></b> and <b><a href=http://earthquake.usgs.gov/
+                        target=_blank><span class='d_grey_small'>USGS</span></a></b>. Click on any of the markers for
+                more information about the station or event.</span><br>
+
+
+            <div id="map" style='width:90%; height:756px;'></div>
+
+
+            <div style='text-align:center; width:100%;'>
+
+                <div style='display:inline-block; padding:3px; width:27%;'>
+                    <div style='padding:3px; background-color:#f4f4f4; border-radius:5px; width:100%; text-align:left;'>
+                        <div style='display:inline-block; padding:3px; width:10%; text-align:right;'><img
+                                src="https://nzseis-stations.auckland.ac.nz/_img/ru_station-60x60.png"
+                                alt="TC-1 Seismometer Station" width='90%' /></div>
+                        <div style='display:inline-block; padding:3px; width:85%; text-align:left;'><span
+                                class='d_grey_x-small'>Seismometer Station. Access is provided to the seismographs
+                                generated by the various stations we have placed around New Zealand.</span></div>
+                    </div>
+                </div>
+
+                <div style='display:inline-block; padding:3px; width:27%;'>
+                    <div style='padding:3px; background-color:#f4f4f4; border-radius:5px; width:100%; text-align:left;'>
+                        <div style='display:inline-block; padding:3px; width:10%; text-align:right;'><img
+                                src="https://nzseis-stations.auckland.ac.nz/_img/ru_eq_geonetnz-60x60.png"
+                                alt="Seismic event as recorded by GeoNet or USGS" width='90%' /></div>
+                        <div style='display:inline-block; padding:3px; width:85%; text-align:left;'><span
+                                class='d_grey_x-small'>Seismic event. The size is proportional to its magnitude, the
+                                transparency to its age and the color indicates the depth in accord with the graph
+                                below.</span>
+                            <div class="eqDistGradient">
+                                <div style='display:inline-block; padding:0px; width:48%; text-align:left;'><span
+                                        class='white_x-small'><b>400</b>km</span></div>
+                                <div style='display:inline-block; padding:0px; width:48%; text-align:right;'><span
+                                        class='white_x-small'><b>0</b>km</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+            <br>
+            <div style="width:40%;">
+
+
+                <select class="sel_1" name="stations">
+                    <option value="" selected="selected">Select a Station</option>
+                    <option value="ASHB1">ASHB1 - Ashburton Museum (Pi)</option>
+                    <option value="AUCK">AUCK - University of Auckland (Pi)</option>
+                    <option value="BYVW1">BYVW1 - Bayview Primary School (Pi)</option>
+                    <option value="DEVE2">DEVE2 - Development (Pi)</option>
+                    <option value="EGGS1">EGGS1 - Epsom Girls Grammar School (Mac)</option>
+                    <option value="GARM1">GARM1 - Garry McCarthy (Pi)</option>
+                    <option value="GNS01">GNS01 - GNS01</option>
+                    <option value="GOHS1">GOHS1 - Gore High School (Pi)</option>
+                    <option value="HOKI1">HOKI1 - Westland High School (Pi)</option>
+                    <option value="JAHA1">JAHA1 - James Hargest College (Pi)</option>
+                    <option value="KINM1">KINM1 - Kiwi North Museum (Pi 3B+)</option>
+                    <option value="LPHS1">LPHS1 - Logan Park High School (Pi)</option>
+                    <option value="MAPS1">MAPS1 - Maungatapu Primary School - (Pi)</option>
+                    <option value="MTAS1">MTAS1 - Mount Aspiring College (Pi)</option>
+                    <option value="ODS1">ODS1 - Oratia District School (Mac)</option>
+                    <option value="OTMU1">OTMU1 - Otago Museum (Pi)</option>
+                    <option value="PINE1">PINE1 - Pinehurst School (Pi)</option>
+                    <option value="RARU1">RARU1 - Rangi Ruru Girls School (Pi)</option>
+                    <option value="RODC1">RODC1 - Rodney College (Pi)</option>
+                    <option value="SACS1">SACS1 - Suzanne Aubert Catholic School (Pi)</option>
+                    <option value="SHGC1">SHGC1 - Sacred Heart Girls College (Pi)</option>
+                    <option value="STMC1">STMC1 - St Thomas More Catholic School (Pi)</option>
+                    <option value="STMC2">STMC2 - St Mary's Catholic Primary School - Rotorua (Pi)</option>
+                    <option value="STMC3">STMC3 - St Mary's Catholic School - Tauranga (Pi)</option>
+                    <option value="TAUC">TAUC - Taupo-nui-a-Tia College (Pi)</option>
+                    <option value="WAIC1">WAIC1 - Waimea College (Pi)</option>
+                    <option value="WDFS1">WDFS1 - Woodford School (Mac)</option>
+                    <option value="WELC1">WELC1 - Wellesley College (Pi) Rel 9.3</option>
+                    <option value="WGHS1">WGHS1 - Whangarei Girls High School (Pi)</option>
+                    <option value="WHAS1">WHAS1 - Whangaruru School</option>
+                    <option value="WHHS1">WHHS1 - Whangarei Heads School (Pi)</option>
+                    <option value="WWPS1">WWPS1 - Wentworth School (Pi 4) Rel 11</option>
+                </select>
+            </div>
+
+
+
+
+
+            <div id="station-data" class="d_grey_medium"></div>
+
+            <br>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+            integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+            crossorigin="" />
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+        <script>
+
+            var stationData = [{ "id": "ASHB1", "keyname": "ASHB1", "name": "Ashburton Museum (Pi)", "latitude": "-43.902179", "longitude": "171.749108", "url": "http://www.ashburtonmuseum.co.nz", "contact_person": "Glenn Vallender", "contact_email": "ge.vallender@xtra.co.nz", "contact_phone": "03 308 8373", "created_at": "date1", "updated_at": "date2" }, { "id": "AUCK", "keyname": "AUCK", "name": "University of Auckland (Pi)", "latitude": "-36.852422", "longitude": "174.768069", "url": "https://www.physics.auckland.ac.nz/en.html", "contact_person": "Kasper Van Wijk", "contact_email": "k.vanwijk@auckland.ac.nz", "contact_phone": "09 923 5754", "created_at": "date1", "updated_at": "date2" }, { "id": "BYVW1", "keyname": "BYVW1", "name": "Bayview Primary School (Pi)", "latitude": "-36.772234", "longitude": "174.705851", "url": "http://www.bayview.school.nz/", "contact_person": "Dan Hikuroa", "contact_email": "d.hikuroa@auckland.ac.nz", "contact_phone": "099239026", "created_at": "date1", "updated_at": "date2" }, { "id": "DEVE2", "keyname": "DEVE2", "name": "Development (Pi)", "latitude": "-36.852602", "longitude": "174.768546", "url": "", "contact_person": "Graham Moss", "contact_email": "graham.moss@auckland.ac.nz", "contact_phone": "", "created_at": "date1", "updated_at": "date2" }, { "id": "EGGS1", "keyname": "EGGS1", "name": "Epsom Girls Grammar School (Mac)", "latitude": "-36.876429", "longitude": "174.774123", "url": "", "contact_person": "Mayada Ghanim", "contact_email": "mghanim@eggs.school.nz", "contact_phone": "", "created_at": "date1", "updated_at": "date2" }, { "id": "GARM1", "keyname": "GARM1", "name": "Garry McCarthy (Pi)", "latitude": "-38.678899", "longitude": "176.064899", "url": "", "contact_person": "Garry McCarthy", "contact_email": "garry.mac@xtra.co.nz", "contact_phone": "0274712403", "created_at": "date1", "updated_at": "date2" }, { "id": "GNS01", "keyname": "GNS01", "name": "GNS01", "latitude": "-36.852422", "longitude": "174.768069", "url": "", "contact_person": "Julian Thomson", "contact_email": "J.Thomson@gns.cri.nz", "contact_phone": "", "created_at": "date1", "updated_at": "date2" }, { "id": "GOHS1", "keyname": "GOHS1", "name": "Gore High School (Pi)", "latitude": "-46.103738", "longitude": "168.928718", "url": "https://www.gore-high.school.nz", "contact_person": "Amy Christie", "contact_email": "achristie@ghs.onmicrosoft.com", "contact_phone": "+64 3 208 9130", "created_at": "date1", "updated_at": "date2" }, { "id": "HOKI1", "keyname": "HOKI1", "name": "Westland High School (Pi)", "latitude": "-42.717790", "longitude": "170.973240", "url": "http://www.westlandhigh.school.nz/", "contact_person": "Chris Manuel", "contact_email": "chrismanuel@westlandhigh.school.nz", "contact_phone": "", "created_at": "date1", "updated_at": "date2" }, { "id": "JAHA1", "keyname": "JAHA1", "name": "James Hargest College (Pi)", "latitude": "-46.390000", "longitude": "168.382000", "url": "http://www.jameshargest.school.nz/", "contact_person": "Louis du Preez", "contact_email": "ldupreez@jameshargest.school.nz", "contact_phone": "021 053 7921", "created_at": "date1", "updated_at": "date2" }, { "id": "KINM1", "keyname": "KINM1", "name": "Kiwi North Museum (Pi 3B+)", "latitude": "-35.742", "longitude": "174.267", "url": "https://www.kiwinorth.co.nz/", "contact_person": "", "contact_email": "admin@kiwinorth.co.nz", "contact_phone": "094389630", "created_at": "date1", "updated_at": "date2" }, { "id": "LPHS1", "keyname": "LPHS1", "name": "Logan Park High School (Pi)", "latitude": "-45.862000", "longitude": "170.528000", "url": "https://www.lphs.school.nz/", "contact_person": "Yvonne Caulfield", "contact_email": "ymc@lphs.school.nz", "contact_phone": "+64 34773586", "created_at": "date1", "updated_at": "date2" }, { "id": "MAPS1", "keyname": "MAPS1", "name": "Maungatapu Primary School - (Pi)", "latitude": "-37.721813", "longitude": "176.171800", "url": "http://maungatapu.school.nz", "contact_person": "Chris Dixon", "contact_email": "chrisd@maungatapu.school.nz", "contact_phone": "07 5440858", "created_at": "date1", "updated_at": "date2" }, { "id": "MTAS1", "keyname": "MTAS1", "name": "Mount Aspiring College (Pi)", "latitude": "-44.688126", "longitude": "169.136289", "url": "http://www.mtaspiring.school.nz/", "contact_person": "Tim Harper", "contact_email": "tim@mtaspiring.school.nz", "contact_phone": "034435167", "created_at": "date1", "updated_at": "date2" }, { "id": "ODS1", "keyname": "ODS1", "name": "Oratia District School (Mac)", "latitude": "-36.913743", "longitude": "174.620273", "url": "http://oratia.school.nz/", "contact_person": "Wendy Roigard", "contact_email": "wendyr@oratia.school.nz", "contact_phone": "098186216", "created_at": "date1", "updated_at": "date2" }, { "id": "OTMU1", "keyname": "OTMU1", "name": "Otago Museum (Pi)", "latitude": "-45.865000", "longitude": "170.510000", "url": "http://otagomuseum.nz", "contact_person": "Craig Grant", "contact_email": "Craig.Grant@otagomuseum.nz", "contact_phone": "", "created_at": "date1", "updated_at": "date2" }, { "id": "PINE1", "keyname": "PINE1", "name": "Pinehurst School (Pi)", "latitude": "-36.740000", "longitude": "174.702000", "url": "https://pinehurst.school.nz", "contact_person": "Vivien O'Connell", "contact_email": "Vivien.O", "contact_phone": "", "created_at": "date1", "updated_at": "date2" }, { "id": "RARU1", "keyname": "RARU1", "name": "Rangi Ruru Girls School (Pi)", "latitude": "-43.519672", "longitude": "172.617610", "url": "http://www.rangiruru.school.nz/", "contact_person": "Sheherazad Bhote / Charles", "contact_email": "cyclone@rangiruru.school.nz", "contact_phone": "", "created_at": "date1", "updated_at": "date2" }, { "id": "RODC1", "keyname": "RODC1", "name": "Rodney College (Pi)", "latitude": "-36.287772", "longitude": "174.520990", "url": "https://www.rodneycollege.com", "contact_person": "Daryl Crosby", "contact_email": "daryl.crosby@rodneycollege.school.nz", "contact_phone": "", "created_at": "date1", "updated_at": "date2" }, { "id": "SACS1", "keyname": "SACS1", "name": "Suzanne Aubert Catholic School (Pi)", "latitude": "-37.723", "longitude": "176.335", "url": "https://www.suzanneaubert.school.nz", "contact_person": "Anthony Mills", "contact_email": "principal@suzanneaubert.school.nz", "contact_phone": "07 777 0438", "created_at": "date1", "updated_at": "date2" }, { "id": "SHGC1", "keyname": "SHGC1", "name": "Sacred Heart Girls College (Pi)", "latitude": "-37.791", "longitude": "175.295", "url": "https://shgcham.school.nz", "contact_person": "Leigh Sanfelieu", "contact_email": "lsa@shgcnp.school.nz", "contact_phone": "07-856 7874", "created_at": "date1", "updated_at": "date2" }, { "id": "STMC1", "keyname": "STMC1", "name": "St Thomas More Catholic School (Pi)", "latitude": "-37.676728", "longitude": "176.226807", "url": "http://www.stthomasmore.school.nz/", "contact_person": "Richard Webster", "contact_email": "rwebster@stm.school.nz", "contact_phone": "", "created_at": "date1", "updated_at": "date2" }, { "id": "STMC2", "keyname": "STMC2", "name": "St Mary's Catholic Primary School - Rotorua (Pi)", "latitude": "-38.146500", "longitude": "176.246380", "url": "http://www.stmarysrotorua.school.nz/", "contact_person": "David Bach", "contact_email": "davidb@stmarysrotorua.school.nz", "contact_phone": "073481701", "created_at": "date1", "updated_at": "date2" }, { "id": "STMC3", "keyname": "STMC3", "name": "St Mary's Catholic School - Tauranga (Pi)", "latitude": "-37.70656", "longitude": "176.16362", "url": "stmarystga.school.nz", "contact_person": "Anthony Mills", "contact_email": "amills@stm.school.nz", "contact_phone": "", "created_at": "date1", "updated_at": "date2" }, { "id": "TAUC", "keyname": "TAUC", "name": "Taupo-nui-a-Tia College (Pi)", "latitude": "-38.681113", "longitude": "176.079083", "url": "http://taupocollege.ac.nz/", "contact_person": "Kay Andrews", "contact_email": "kay.andrews@taupocollege.ac.nz", "contact_phone": "", "created_at": "date1", "updated_at": "date2" }, { "id": "WAIC1", "keyname": "WAIC1", "name": "Waimea College (Pi)", "latitude": "-41.337374", "longitude": "173.196350", "url": "http://www.waimea.school.nz", "contact_person": "Paul Nistor", "contact_email": "paul.nistor@waimea.school.nz", "contact_phone": "035446099", "created_at": "date1", "updated_at": "date2" }, { "id": "WDFS1", "keyname": "WDFS1", "name": "Woodford School (Mac)", "latitude": "-39.683882", "longitude": "176.879048", "url": "http://www.woodford.school.nz/", "contact_person": "Iresha Dona", "contact_email": "iresha.dona@woodford.school.nz", "contact_phone": "068730700", "created_at": "date1", "updated_at": "date2" }, { "id": "WELC1", "keyname": "WELC1", "name": "Wellesley College (Pi) Rel 9.3", "latitude": "-41.278403", "longitude": "174.907432", "url": "http://www.wellesley.school.nz", "contact_person": "Jo Hawthorne", "contact_email": "jo@wellesley.school.nz", "contact_phone": "0220456369", "created_at": "date1", "updated_at": "date2" }, { "id": "WGHS1", "keyname": "WGHS1", "name": "Whangarei Girls High School (Pi)", "latitude": "-35.714323", "longitude": "174.320103", "url": "http://wghs.school.nz", "contact_person": "Nick Major", "contact_email": "nick.major@wghs.school.nz", "contact_phone": "0649 430 4460", "created_at": "date1", "updated_at": "date2" }, { "id": "WHAS1", "keyname": "WHAS1", "name": "Whangaruru School", "latitude": "-35.377126", "longitude": "174.309074", "url": "https://www.whangaruru.school.nz/", "contact_person": "Jamie McQueen", "contact_email": "principal@whangaruru.school.nz", "contact_phone": "+6494336520", "created_at": "date1", "updated_at": "date2" }, { "id": "WHHS1", "keyname": "WHHS1", "name": "Whangarei Heads School (Pi)", "latitude": "-35.823", "longitude": "174.516", "url": "www.whangareiheads.school.nz", "contact_person": "Denise Humphries", "contact_email": "office@whangareiheads.school.nz", "contact_phone": "09 434 0844", "created_at": "date1", "updated_at": "date2" }, { "id": "WWPS1", "keyname": "WWPS1", "name": "Wentworth School (Pi 4) Rel 11", "latitude": "-36.613205", "longitude": "174.791808", "url": "http://www.wentworth.school.nz", "contact_person": "Andrew Brown", "contact_email": "abrown@wentworth.school.nz", "contact_phone": "094243273", "created_at": "date1", "updated_at": "date2" }];
+
+            var map, infoWindow, stationLayer, usgsLayer, geonetLayer;
+
+            function loadEarthquakeData(geojson, layergroup) {
+                console.log(geojson)
+
+                for (var feature of geojson.features) {
+                    [lng, lat, depth] = feature.geometry.coordinates;
+                    var p = feature.properties
+                    if (!depth) {
+                        depth = p.depth
+                    }
+                    if (depth) {
+                        depth = depth.toFixed(2)
+                    }
+
+                    var red, green, blue = '00';
+
+                    //set the colour based on depth
+                    var theDepth_clamped = depth * (255 / 400);
+
+                    if (theDepth_clamped > 255) {
+                        theDepth_clamped = 255.0;
+                    } else if (theDepth_clamped < 0) {
+                        theDepth_clamped = 0.0;
+                    }
+
+                    if (theDepth_clamped < 128) {
+                        green = 'ff';
+                        red = Math.round(theDepth_clamped * 2).toString(16);
+                        if (red.length < 2) red = '0' + red;
+                    } else {
+                        green = Math.round(255 - (theDepth_clamped - 128) * 2).toString(16);
+                        if (green.length < 2) green = '0' + green;
+                        red = 'ff';
+                    }
+
+                    var magnitude = (p.mag || p.magnitude).toFixed(2)
+                    var time = p.origintime || new Date(p.time)
+                    var url = p.url || "https://www.geonet.org.nz/earthquake/" + p.publicid
+                    var title = p.title || feature.id || p.publicid
+
+                    var content = '<div>' +
+                        '<a href="' + url + '" target="_blank">' + title + '</a>' +
+                        '<br/><b>Time:</b> ' + time +
+                        '<br/><b>Magnitude:</b> ' + magnitude +
+                        '<br/><b>Depth:</b> ' + depth + ' km' +
+                        '<br/></div>';
+
+                    //map the quake data as a marker
+                    var marker = L.circleMarker([lat, lng], {
+                        radius: magnitude * 3,
+                        color: '#' + red + green + 'aa',
+                        opacity: 1,
+                        fillColor: '#' + red + green + blue,
+                        fillOpacity: 0.5,
+                        weight: 1
+                    })
+                        .bindTooltip(title)
+                        .bindPopup(content)
+                        .addTo(layergroup)
+
+                }
+            }
+
+            function initMap() {
+                //specify custom marker icon - code courtesy of Matiu Carr
+                var path = 'M 0,-15 -3,-15 -3,-2 0,0 3,-2 3,-15 0,-15 0,-14 2,-14 -2,-13 2,-13 -2,-12 2,-12 -2,-11 2,-11 -2,-10 2,-10 -2,-9 2,-9 -2,-8 2,-8 -2,-7 2,-7 -2,-6 0,-6 0,-5 -1,-5 -1,-4 0,-4 0,-3 -1,-3 -1,-2 1,-2 1,-3 0,-3 0,-4 1,-4 1,-5 0,-5 z';
+                const icon = L.divIcon({
+                    html: `<svg
+                                width="25"
+                                height="50"
+                                viewBox="-4 -16 8 16"
+                                version="1.1"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path d="${path}" fill="white" stroke="black" stroke-width=".4"></path>
+                    </svg>`,
+                    className: 'icon',
+                    iconSize: [25, 50],
+                    iconAnchor: [12, 50],
+                });
+
+                map = L.map('map', {
+                    center: [-41.268, 173.281],
+                    zoom: 6,
+                });
+
+                var linzBasemap = L.tileLayer("https://basemaps.linz.govt.nz/v1/tiles/aerial/EPSG:3857/{z}/{x}/{y}.webp?api=d01eyvkkr9erajj4zpeqykezbgn", {
+                    maxZoom: 26,
+                    maxNativeZoom: 22,
+                    subdomains: 'abcd',
+                    attribution: 'Aerial imagery &copy; <a href="//www.linz.govt.nz/data/linz-data/linz-basemaps/data-attribution">LINZ</a>'
+                }).addTo(map)
+
+                stationLayer = L.layerGroup().addTo(map)
+                usgsLayer = L.layerGroup().addTo(map)
+                geonetLayer = L.layerGroup().addTo(map)
+                var basemaps = {
+                    "LINZ Basemap": linzBasemap
+                }
+                var overlays = {
+                    "Seismometer stations": stationLayer,
+                    "USGS Earthquakes": usgsLayer,
+                    "GeoNet Earthquakes": geonetLayer
+                }
+                L.control.layers(basemaps, overlays).addTo(map);
+
+                for (var station of stationData) {
+                    var marker = L.marker([parseFloat(station.latitude), parseFloat(station.longitude)], { icon: icon })
+                        .bindTooltip(station.name)
+                        .bindPopup(`<a href="https://nzseis-stations.auckland.ac.nz/stations/${station.keyname}/latest.png" target="_blank">
+                            ${station.id} - ${station.name}
+                        </a>`)
+                        .addTo(stationLayer)
+                }
+                //dynamically adjust the map height to prevent screen scroll bar from showing
+                $('#network-map').css('height', parseInt(($(window).height() / 100) * 75) + 'px');
+            }
+
+            function getDateXDaysAgo(numOfDays) {
+                const date = new Date();
+                date.setDate(date.getDate() - numOfDays);
+                return date.toISOString();
+            }
+
+            function fetch_data() {
+                usgsLayer.clearLayers()
+                geonetLayer.clearLayers()
+                var magnitude = $("#magnitude").val()
+                var age = $("#age").val()
+                var age_text = $("#age option:selected").text();
+
+                $.getJSON(`https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/${magnitude}_${age_text}.geojson`, function (usgsGeoJSON) {
+                    loadEarthquakeData(usgsGeoJSON, usgsLayer);
+                    $.getJSON("https://wfs.geonet.org.nz/geonet/ows", {
+                        service: "WFS",
+                        version: "1.0.0",
+                        request: "GetFeature",
+                        typeName: "geonet:quake_search_v1",
+                        outputFormat: "json",
+                        cql_filter: `magnitude>${magnitude} AND eventtype=earthquake AND origintime>=${getDateXDaysAgo(age)}`
+                    }, function (geonetGeoJSON) {
+                        loadEarthquakeData(geonetGeoJSON, geonetLayer);
+                        var n_US = usgsGeoJSON.features.length
+                        var n_NZ = geonetGeoJSON.features.length
+                        $("#n_eq").text(n_US + n_NZ)
+                        $("#pct_nz").text((n_NZ / (n_US + n_NZ) * 100).toFixed(2) + "%")
+                    });
+                });
+            }
+            initMap()
+            fetch_data()
+
+            $('select.sel_1').on('change', function () {
+                fetch_data()
+            })
+
+            $('select[name="stations"]').change(function (evt) {
+                var schoolId = $(evt.target).val();
+
+                if (!schoolId) {
+                    return;
+                }
+
+                for (var station of stationData) {
+                    if (station.id == schoolId) {
+                        //zoom-in to the neighbourhood of the selected station
+                        map.flyTo({
+                            lat: parseFloat(station.latitude),
+                            lng: parseFloat(station.longitude)
+                        }, 18);
+                        var html = "";
+                        if (station.url) {
+                            html = `<a href="${station.url} target="_blank">Visit ${station.name}</a>`
+                        }
+                        $("#station-data").html(html + `<img src="https://nzseis-stations.auckland.ac.nz/stations/${station.keyname}/latest.png" alt="Latest screenshot from ${station.name}">`);
+                    }
+                }
+            });
+
+        </script>
+
+        <div style='text-align:center;width:100%'><span class='d_grey_medium'><br><b>The network of Seismometers in NZ
+                    Schools</b><br></span><span class='d_grey_small'><br>Contact Information:<br></span>
+
+            <span class='d_grey_medium'>
+
+                Kasper van Wijk<br>
+
+                <a href='mailto:k.vanwijk@auckland.ac.nz'><span
+                        class='d_grey_medium'><b>k.vanwijk@auckland.ac.nz</b></span></a> <br><br>
+
+                <a href='https://ru.auckland.ac.nz' target='_blank'><img
+                        src='https://nzseis-stations.auckland.ac.nz/_img/ru.png'
+                        style='width:11%;'><br>ru.auckland.ac.nz<br><br></a></span>
+        </div>
+
+</html>
