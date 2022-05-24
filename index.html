@@ -1017,17 +1017,20 @@
                         '<br/></div>';
 
                     //map the quake data as a marker
-                    var marker = L.circleMarker([lat, lng], {
-                        radius: magnitude * 3,
-                        color: '#' + red + green + 'aa',
-                        opacity: 1,
-                        fillColor: '#' + red + green + blue,
-                        fillOpacity: 0.5,
-                        weight: 1
-                    })
-                        .bindTooltip(title)
-                        .bindPopup(content)
-                        .addTo(layergroup)
+                    // the world wraps around, so place copies offset by 360 degrees longitude
+                    for (var offset of [-360*2, -360, 0, 360, 360*2]) {
+                        var marker = L.circleMarker([lat, lng + offset], {
+                            radius: magnitude * 3,
+                            color: '#' + red + green + 'aa',
+                            opacity: 1,
+                            fillColor: '#' + red + green + blue,
+                            fillOpacity: 0.5,
+                            weight: 1
+                        })
+                            .bindTooltip(title)
+                            .bindPopup(content)
+                            .addTo(layergroup)
+                    }
 
                 }
             }
@@ -1053,6 +1056,8 @@
                 map = L.map('map', {
                     center: [-41.268, 173.281],
                     zoom: 6,
+                    worldCopyJump: true,
+                    minZoom: 1
                 });
 
                 var linzBasemap = L.tileLayer("https://basemaps.linz.govt.nz/v1/tiles/aerial/EPSG:3857/{z}/{x}/{y}.webp?api=d01eyvkkr9erajj4zpeqykezbgn", {
